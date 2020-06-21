@@ -1,10 +1,11 @@
+let x = 0
+let y = 0
 function xypos (x: number, y: number, image: Image) {
     x = input.acceleration(Dimension.X)
     y = input.acceleration(Dimension.Y)
-    basic.showNumber(x, y)
+    serial.writeValue("x", x)
+    serial.writeValue("y", y)
 }
-let y = 0
-let x = 0
 basic.forever(function () {
     let image: Image = null
     xypos(x, y, image)
